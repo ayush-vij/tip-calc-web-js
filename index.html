@@ -10,6 +10,13 @@
     <body>
         <div class="card">
             <h2>Tip Calculator</h2>
+            <label for="location">Where are you located?</label>
+            <select>
+                <option id="CA">California (CA)</option>
+                <option id="CO">Colorado (CO)</option>
+                <option id="DC">District Of Columbia (DC)</option>
+                <option id="WA">Washington</option>
+            </select>
             <label for="billAmount">Bill Amount</label>
             <input type="text" id="billAmount"/>
             <button id="btn15">15%</button>
@@ -18,6 +25,7 @@
             <input type="text" placeholder="Custom Tip Amount %" id="customTip"/>
             <button id="btncalc">Calculate</button>
             <h4>Result</h4>
+            <p>Tax: <output id="taxAmount"></output><br /></p>
             <p>Tip amount: <output id="tipAmount"></output><br /></p>
             <p>Total: <output id="total"></output></p>
             <footer>
