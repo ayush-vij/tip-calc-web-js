@@ -2,16 +2,21 @@ document.getElementById("btn15").addEventListener("click",calc);
 document.getElementById("btn175").addEventListener("click",calc);
 document.getElementById("btn20").addEventListener("click",calc);
 document.getElementById("btncalc").addEventListener("click",calc);
-document.getElementById("CA").addEventListener("click",calc);
-document.getElementById("CO").addEventListener("click",calc);
-document.getElementById("DC").addEventListener("click",calc);
-document.getElementById("WA").addEventListener("click",calc);
+// document.getElementById("CA").addEventListener("change",calc);
+document.getElementById("states").addEventListener("change",calc,false);
+// document.getElementById("CO").addEventListener("click",calc);
+// document.getElementById("DC").addEventListener("click",calc);
+// document.getElementById("WA").addEventListener("click",calc);
 
+function taxThing(coll){
+    
+
+}
 function calc(event){
     let tipPercent = 0;
     let buttonPressed = event.target.id;
     let taxPercent = 0;
-    let stateSelect = event.target.id;
+    let stateSelect = event.target.value;
 
     switch(stateSelect){
         case "CA":
@@ -27,7 +32,6 @@ function calc(event){
             taxPercent = 0.101;
             break;
     }
-
     switch (buttonPressed){
         case "btn15":
             tipPercent = 0.15;
