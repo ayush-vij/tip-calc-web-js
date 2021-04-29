@@ -8,30 +8,18 @@ document.getElementById("states").addEventListener("change",calc,false);
 // document.getElementById("DC").addEventListener("click",calc);
 // document.getElementById("WA").addEventListener("click",calc);
 
-function taxThing(coll){
-    
-
+let stateTaxVals = {
+    "CA" : 0.1025,
+    "CO" : 0.735,
+    "DC" : 0.10,
+    "WA" : 0.101
 }
+
 function calc(event){
     let tipPercent = 0;
     let buttonPressed = event.target.id;
-    let taxPercent = 0;
-    let stateSelect = event.target.value;
-
-    switch(stateSelect){
-        case "CA":
-            taxPercent = 0.1025;
-            break;
-        case "CO":
-            taxPercent = 0.735;
-            break;
-        case "DC":
-            taxPercent = 0.10;
-            break;
-        case "WA":
-            taxPercent = 0.101;
-            break;
-    }
+    let taxPercent = stateTaxVals[document.getElementById('states').value];
+    // let stateSelect = event.target.value;
     switch (buttonPressed){
         case "btn15":
             tipPercent = 0.15;
@@ -48,6 +36,7 @@ function calc(event){
 
     let billAmount = document.getElementById("billAmount").value;
     billAmount = parseFloat(billAmount);
+    taxPercent = parseFloat(taxPercent).toFixed(2);
     let tax = billAmount * taxPercent;
     let tip = billAmount * tipPercent;
     let total = tax + tip + billAmount;
